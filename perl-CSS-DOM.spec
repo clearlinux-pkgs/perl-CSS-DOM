@@ -4,13 +4,14 @@
 #
 Name     : perl-CSS-DOM
 Version  : 0.17
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Summary  : 'Document Object Model for Cascading Style Sheets'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
-Requires: perl-CSS-DOM-man
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0 GPL-2.0
+Requires: perl-CSS-DOM-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl(Clone)
 
 %description
@@ -18,12 +19,21 @@ CSS::DOM, version 0.17
 This module implements a CSS-specific subset of the interfaces
 described in the W3C DOM specification.
 
-%package man
-Summary: man components for the perl-CSS-DOM package.
+%package dev
+Summary: dev components for the perl-CSS-DOM package.
+Group: Development
+Provides: perl-CSS-DOM-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-CSS-DOM package.
+
+
+%package license
+Summary: license components for the perl-CSS-DOM package.
 Group: Default
 
-%description man
-man components for the perl-CSS-DOM package.
+%description license
+license components for the perl-CSS-DOM package.
 
 
 %prep
@@ -51,10 +61,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-CSS-DOM
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-CSS-DOM/LICENSE
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -63,31 +75,31 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Array.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Constants.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Exception.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Interface.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/MediaList.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Parser.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/PropertyParser.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/Charset.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/FontFace.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/Import.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/Media.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/Page.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Rule/Style.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/RuleList.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Style.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/StyleSheetList.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Util.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Value.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Value/List.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Value/Primitive.pm
-/usr/lib/perl5/site_perl/5.26.1/CSS/DOM/Value/Primitive/colours.pl
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Array.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Constants.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Exception.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Interface.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/MediaList.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Parser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/PropertyParser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Charset.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/FontFace.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Import.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Media.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Page.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Style.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/RuleList.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Style.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/StyleSheetList.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Util.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/List.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/Primitive.pm
+/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/Primitive/colours.pl
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/CSS::DOM.3
 /usr/share/man/man3/CSS::DOM::Array.3
@@ -111,3 +123,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/CSS::DOM::Value.3
 /usr/share/man/man3/CSS::DOM::Value::List.3
 /usr/share/man/man3/CSS::DOM::Value::Primitive.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-CSS-DOM/LICENSE
