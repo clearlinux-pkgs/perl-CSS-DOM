@@ -4,7 +4,7 @@
 #
 Name     : perl-CSS-DOM
 Version  : 0.17
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Summary  : 'Document Object Model for Cascading Style Sheets'
@@ -75,29 +75,29 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Array.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Constants.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Exception.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Interface.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/MediaList.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Parser.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/PropertyParser.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Charset.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/FontFace.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Import.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Media.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Page.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Rule/Style.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/RuleList.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Style.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/StyleSheetList.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Util.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/List.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/Primitive.pm
-/usr/lib/perl5/vendor_perl/5.26.1/CSS/DOM/Value/Primitive/colours.pl
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Array.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Constants.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Exception.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Interface.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/MediaList.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Parser.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/PropertyParser.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/Charset.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/FontFace.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/Import.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/Media.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/Page.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Rule/Style.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/RuleList.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Style.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/StyleSheetList.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Util.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Value.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Value/List.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Value/Primitive.pm
+/usr/lib/perl5/vendor_perl/5.28.0/CSS/DOM/Value/Primitive/colours.pl
 
 %files dev
 %defattr(-,root,root,-)
