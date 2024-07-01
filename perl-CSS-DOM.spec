@@ -7,7 +7,7 @@
 #
 Name     : perl-CSS-DOM
 Version  : 0.17
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SP/SPROUT/CSS-DOM-0.17.tar.gz
 Summary  : 'Document Object Model for Cascading Style Sheets'
